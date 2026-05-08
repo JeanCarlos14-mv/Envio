@@ -1,108 +1,63 @@
-# Envio - Sistema de Gestión de Envíos
+# Envíos Nacionales - Documentación del Proyecto
 
-## Descripción
+Este proyecto describe la arquitectura y funcionalidades de una plataforma de envíos nacionales desarrollada para una empresa con 3 estaciones de servicio.
 
-Aplicación web para la gestión integral de envíos y distribución. Sistema de tres bandas que permite optimizar el control de paquetes desde su creación hasta su entrega final.
+## Visión de desarrollo
 
-## Características Principales
+Como desarrollador, el objetivo es construir un sistema que permita:
 
-- 📦 Gestión de envíos en tiempo real
-- 🗺️ Seguimiento de paquetes
-- 👥 Administración de usuarios y roles
-- 📊 Reportes y estadísticas
-- 🔔 Notificaciones automáticas
-- 🔐 Seguridad y autenticación
+- Registrar envíos desde tres estaciones físicas.
+- Permitir a los usuarios realizar envíos y retirar paquetes en cualquiera de las estaciones.
+- Gestionar el flujo de paquetes con seguimiento y control de estado.
+- Ofrecer funcionalidades adicionales que soporten la operación diaria y la escalabilidad.
 
-## Arquitectura de 3 Bandas
+## Estructura del sistema
 
-La aplicación está dividida en tres capas fundamentales:
+### Componentes clave
 
-### 1. **Capa de Presentación (Frontend)**
-- Interfaz de usuario responsiva
-- Gestión de envíos desde el cliente
-- Visualización de seguimiento
-- Panel de control administrativo
+- `Estaciones`:
+  - Estación 1: Recepción, clasificación y retiro.
+  - Estación 2: Centro de operaciones y distribución.
+  - Estación 3: Punto de entrega y atención al cliente.
 
-### 2. **Capa de Lógica de Negocio (Backend)**
-- APIs REST para operaciones CRUD
-- Validación de datos
-- Procesamiento de envíos
-- Gestión de autenticación y autorización
-- Cálculo de rutas y distribución
+- `Envíos`:
+  - Creación de envíos nacionales.
+  - Estado del paquete: recibido, en tránsito, listo para retiro, entregado.
+  - Asignación de estación de origen y estación de retiro.
 
-### 3. **Capa de Datos (Base de Datos)**
-- Almacenamiento de información de envíos
-- Registro de usuarios
-- Historial de transacciones
-- Datos de localización
+- `Usuarios`:
+  - Clientes que envían paquetes.
+  - Destinatarios que retiran paquetes en estaciones.
+  - Operadores de estación que gestionan la paquetería.
 
-## Tecnologías Utilizadas
+## Funcionalidades principales
 
-- **Frontend:** HTML, CSS, JavaScript (Framework a definir)
-- **Backend:** Node.js / Python / Java (a definir)
-- **Base de Datos:** SQL / MongoDB (a definir)
-- **Control de Versiones:** Git
+- Registro y validación de envíos.
+- Generación de guía o código de rastreo.
+- Asignación automática de estación de retiro según la logística.
+- Consulta de estado en tiempo real.
+- Gestión de retiros en cualquiera de las tres estaciones.
 
-## Requisitos del Sistema
+## Opciones útiles para el desarrollo
 
-- Node.js v16+ (si aplica)
-- Base de datos compatible
-- Navegador web moderno
-- Conexión a Internet
+- Integración de seguimiento en línea para cada paquete.
+- Panel de administración para operadores de estación.
+- Gestión de inventario de paquetes y espacio en estaciones.
+- Historial de envíos y reportes de uso.
 
-## Instalación
+## Recomendaciones técnicas
 
-```bash
-# Clonar el repositorio
-git clone <url-del-repositorio>
+- Usar arquitectura modular para separar lógica de estaciones, envíos y usuarios.
+- Mantener estados de envío claros y consistentes.
+- Diseñar una API que soporte operaciones CRUD y consultas de estado.
+- Asegurar que el sistema pueda escalar a más estaciones o rutas futuras.
 
-# Instalar dependencias
-npm install
+## Notas del desarrollador
 
-# Configurar variables de entorno
-cp .env.example .env
+Este README sirve como un resumen funcional del proyecto. La motivación principal es construir un servicio de envío nacional que soporte:
 
-# Iniciar la aplicación
-npm start
-```
+- envío desde tres estaciones desplegadas,
+- retiro en cualquiera de esas estaciones,
+- transparencia en el proceso y seguimiento de paquetes.
 
-## Uso
-
-1. Acceder a la aplicación desde el navegador
-2. Iniciar sesión con credenciales
-3. Crear nuevo envío
-4. Rastrear estado del envío
-5. Generar reportes
-
-## Estructura del Proyecto
-
-```
-Envio/
-├── frontend/          # Capa de presentación
-├── backend/           # Capa de lógica de negocio
-├── database/          # Scripts de base de datos
-└── docs/              # Documentación
-```
-
-## Contribución
-
-Las contribuciones son bienvenidas. Por favor:
-
-1. Fork el proyecto
-2. Crear una rama para tu feature
-3. Commit de tus cambios
-4. Push a la rama
-5. Abrir un Pull Request
-
-## Licencia
-
-Este proyecto está bajo licencia MIT.
-
-## Contacto
-
-Para más información, contactar al equipo de desarrollo.
-
----
-
-**Estado:** En desarrollo
-**Última actualización:** Mayo 2026
+Con esta base, se puede avanzar hacia una implementación concreta usando tecnologías web, bases de datos y herramientas de gestión de paquetes.
